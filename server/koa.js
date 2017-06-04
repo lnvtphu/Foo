@@ -14,14 +14,20 @@ import convert from 'koa-convert'
 import router from './router'
 import config from '../internals/config/private'
 import { apiPrefix } from '../internals/config/public'
+import Socket from 'socket.io'
 
 const app = new Koa()
+const io = Socket(8090);
 const env = process.env.NODE_ENV || 'development'
 
 // add header `X-Response-Time`
 app.use(responseTime())
 app.use(convert(logger()))
 
+// add socket
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
 // various security headers
 app.use(helmet())
 

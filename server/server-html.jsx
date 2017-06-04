@@ -18,6 +18,7 @@ function ServerHTML(props: Props) {
 
         {/* Styles */}
         <link rel='icon' type='image/ico' href='/favicon.ico' />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>
         { assets.style.map((href, idx) =>
           <link key={ idx } rel='stylesheet' href={ href } />) }
 

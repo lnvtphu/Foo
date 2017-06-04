@@ -6,7 +6,7 @@ class SessionStore {
 
   constructor() {
     this.bindActions(this.alt.getActions('session'))
-    this.session = null
+    this.session = {}
   }
 
   onUpdate({ username }: { username: string }) {
@@ -33,7 +33,7 @@ class SessionStore {
   }
 
   onLogout() {
-    this.session = null
+    this.session = {}
 
     /* istanbul ignore if */
     if (BROWSER) {

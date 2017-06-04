@@ -43,7 +43,7 @@ class Header extends Component {
   }
 
   render() {
-    const { inProgress, session } = this.props
+    const { inProgress, session: { username } } = this.props
     const { locales: [ activeLocale ], i18n } = this.context
 
     return (
@@ -73,7 +73,7 @@ class Header extends Component {
               { i18n('header.guides') }
             </Link>
           </li>
-          { session ?
+          { username ?
           [
             <li key={ 0 }>
               <Link to={ i18n('routes.account') }>

@@ -12,8 +12,8 @@ class HelmetStore {
 
     this.state = {
       title: '',
-      titleBase: 'Universal ReactJS boilerplate example - ',
-      description: 'An open source universal ReactJS boilerplate, source code on github.com',
+      titleBase: 'Chat.......Now ',
+      description: 'Chat chit chut chich',
       statusCode: 200
     }
   }

@@ -8,8 +8,8 @@ export default function(flux) { /* eslint react/display-name: 0 */
   return (
     <Route component={ require('./components/app') }>
       { generateRoute({
-        paths: [ '/', '/users', '/utilisateurs' ],
-        component: require('./components/users')
+        paths: [ '/', '/chat', '/utilisateurs' ],
+        component: require('./components/chat/index')
       }) }
       { generateRoute({
         paths: [ '/account', '/mon-compte' ],
