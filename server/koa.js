@@ -17,7 +17,8 @@ import { apiPrefix } from '../internals/config/public'
 import Socket from 'socket.io'
 
 const app = new Koa()
-const io = Socket(8090);
+var server = require('http').createServer(app.callback());
+var io = require('socket.io')(server);
 const env = process.env.NODE_ENV || 'development'
 
 // add header `X-Response-Time`
@@ -25,9 +26,17 @@ app.use(responseTime())
 app.use(convert(logger()))
 
 // add socket
-io.on('connection', function(socket){
-  console.log('a user connected');
+io.on('connection', (socket) => {
+  socket.use( (packet, next) => {
+    if (packet.doge === true) return next();
+    next(new Error('Not a doge error'));
+  });
+  socket.on('send:message', (msg) => {
+    console.log('message: ' + msg);
+  });
 });
+
+server.listen(3005);
 // various security headers
 app.use(helmet())
 
