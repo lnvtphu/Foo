@@ -27,10 +27,10 @@ app.use(convert(logger()))
 
 // add socket
 io.on('connection', (socket) => {
-  socket.use( (packet, next) => {
-    if (packet.doge === true) return next();
-    next(new Error('Not a doge error'));
-  });
+  // socket.use( (packet, next) => {
+  //   if (packet.doge === true) return next();
+  //   next(new Error('Not a doge error'));
+  // });
   socket.on('send:message', (msg) => {
     console.log('message: ' + msg);
   });

@@ -22,7 +22,7 @@ module.exports = {
     "import/resolver": { "node": { "paths": [ path.resolve(__dirname, 'app')  ] } }
   },
   "rules": {
-    "linebreak-style": ["error", "windows"],
+    // "linebreak-style": ["error", "windows"],
     "react/jsx-curly-spacing": [2, "always"],
     "react/jsx-closing-bracket-location": [2, "after-props" ],
     "react/sort-comp": 0,
