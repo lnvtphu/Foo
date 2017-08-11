@@ -9,6 +9,7 @@
 @import './lang-picker';
 @import './spinner';
 @import './users';
+@import './viewer';
 
 body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;

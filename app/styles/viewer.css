@@ -1,0 +1,8 @@
+.ContainerImage-WrapImage{
+    input{
+        display: none;
+    }
+    label{
+        cursor: pointer;
+    }
+}
